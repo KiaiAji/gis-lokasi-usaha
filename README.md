@@ -1,123 +1,63 @@
 # GIS Lokasi Usaha
 
-**Sistem Rekomendasi Lokasi Usaha Berbasis Analisis Spasial Menggunakan Python**
+**Studi Kasus Penerapan Geographic Information System (GIS) untuk Rekomendasi Lokasi Usaha Menggunakan Python**
 
 ## Deskripsi Proyek
 
-Proyek ini merupakan studi kasus penerapan *Geographic Information System* (GIS) untuk membantu menentukan lokasi usaha yang potensial berdasarkan data geografis dan beberapa kriteria, seperti jumlah penduduk dan jarak terhadap lokasi pesaing.
+Proyek ini merupakan studi kasus penerapan Geographic Information System (GIS) untuk membantu menganalisis dan menentukan kandidat lokasi usaha berdasarkan data geografis.
 
-Program dibuat menggunakan Python untuk menghitung jarak antar lokasi, menghitung jumlah pesaing dalam radius tertentu, serta memberikan skor rekomendasi untuk setiap kandidat lokasi usaha.
+Analisis dilakukan menggunakan Python melalui notebook Jupyter (`gis_lokasi_usaha.ipynb`). Hasil analisis disimpan dalam file CSV (`hasil_rekomendasi.csv`).
 
-Proyek ini dibuat sebagai implementasi materi tentang karier dan penerapan GIS di era industri.
+Proyek ini dibuat sebagai implementasi materi mengenai karier dan persaingan di era industri dengan penerapan GIS.
 
 ## Tujuan
 
 - Memahami penerapan GIS dalam analisis lokasi usaha.
-- Menggunakan Python untuk mengolah data geografis sederhana.
-- Menghitung jarak antara lokasi usaha dan lokasi pesaing.
-- Membandingkan kandidat lokasi berdasarkan kriteria tertentu.
-- Menghasilkan rekomendasi lokasi usaha berdasarkan skor analisis.
+- Mengolah data menggunakan Python.
+- Menganalisis kandidat lokasi usaha berdasarkan kriteria yang digunakan dalam program.
+- Menyajikan hasil analisis dalam format CSV.
+- Menerapkan keterampilan pemrograman dan analisis data untuk menyelesaikan studi kasus.
 
 ## Teknologi yang Digunakan
 
-- **Python** — bahasa pemrograman utama.
-- **Pandas** — mengolah dan menganalisis data.
-- **Matplotlib** — dapat digunakan untuk visualisasi data.
-- **Jupyter Notebook / Google Colab** — menjalankan eksperimen dan analisis.
+- **Python** — bahasa pemrograman untuk analisis data.
+- **Jupyter Notebook** — lingkungan untuk menjalankan kode Python.
+- **Google Colab** — alternatif untuk menjalankan notebook secara online.
+- **CSV** — format penyimpanan hasil analisis.
 
-## Struktur Proyek
+## Struktur Repository
 
 ```text
 gis-lokasi-usaha/
-├── main.py
-├── gis_lokasi_usaha_colab.ipynb
-├── hasil_rekomendasi.csv
-├── requirements.txt
 ├── README.md
-└── .gitignore
+├── gis_lokasi_usaha.ipynb
+└── hasil_rekomendasi.csv
 ```
 
-## Cara Kerja Program
+## Cara Menjalankan Program
 
-1. Menyiapkan data kandidat lokasi usaha beserta koordinat dan jumlah penduduk.
-2. Menyiapkan data koordinat lokasi pesaing.
-3. Menghitung jarak antara kandidat lokasi dan pesaing menggunakan rumus Haversine.
-4. Menghitung jumlah pesaing dalam radius 1 kilometer.
-5. Menghitung skor setiap kandidat berdasarkan jumlah penduduk dan tingkat persaingan.
-6. Menampilkan hasil analisis dan kandidat lokasi dengan skor tertinggi.
-7. Menyimpan hasil rekomendasi ke file CSV.
+1. Buka file `gis_lokasi_usaha.ipynb` di repository GitHub.
+2. Unduh notebook atau buka melalui Google Colab.
+3. Jalankan setiap sel kode secara berurutan.
+4. Amati hasil analisis yang ditampilkan.
+5. Buka file `hasil_rekomendasi.csv` untuk melihat hasil yang telah disimpan.
 
-## Cara Menjalankan
+## Hasil Proyek
 
-### 1. Clone repository
+File `hasil_rekomendasi.csv` berisi hasil analisis dari program Python. Hasil tersebut dapat digunakan untuk membandingkan kandidat lokasi usaha berdasarkan kriteria dan metode yang diterapkan dalam notebook.
 
-```bash
-git clone https://github.com/USERNAME/gis-lokasi-usaha.git
-cd gis-lokasi-usaha
-```
+## Manfaat Penerapan GIS
 
-Ganti `USERNAME` dengan nama pengguna GitHub kamu.
+GIS dapat membantu proses pengambilan keputusan yang berkaitan dengan lokasi melalui pengolahan dan analisis data geografis. Dalam studi kasus ini, pendekatan GIS digunakan sebagai contoh pemanfaatan teknologi untuk mendukung analisis lokasi usaha.
 
-### 2. Instal dependensi
+## Keterbatasan
 
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Jalankan program
-
-```bash
-python main.py
-```
-
-Hasil analisis akan ditampilkan di terminal dan disimpan dalam file `hasil_rekomendasi.csv`.
-
-### Alternatif: Google Colab
-
-Buka file `gis_lokasi_usaha_colab.ipynb` melalui Google Colab, lalu jalankan setiap sel kode secara berurutan.
-
-## Metode Analisis
-
-Program menggunakan rumus Haversine untuk memperkirakan jarak antara dua titik berdasarkan koordinat lintang (*latitude*) dan bujur (*longitude*).
-
-Skor rekomendasi menggunakan pembobotan sederhana:
-
-- 70% berdasarkan jumlah penduduk.
-- 30% berdasarkan jumlah pesaing, dengan asumsi semakin sedikit pesaing maka lokasi semakin menarik.
-
-Bobot tersebut merupakan asumsi untuk studi kasus dan dapat diubah sesuai kebutuhan penelitian.
-
-## Contoh Hasil
-
-Program menghasilkan tabel kandidat lokasi yang berisi informasi seperti:
-
-- Nama kandidat lokasi.
-- Jumlah penduduk.
-- Jumlah pesaing dalam radius 1 kilometer.
-- Skor rekomendasi.
-
-Lokasi dengan skor tertinggi menjadi kandidat yang direkomendasikan oleh model sederhana ini.
-
-## Catatan dan Keterbatasan
-
-- Data lokasi, koordinat, jumlah penduduk, dan pesaing yang digunakan merupakan **data simulasi**.
-- Hasil program belum dapat dijadikan dasar keputusan bisnis nyata.
-- Skor yang dihasilkan hanya merupakan model awal, bukan jaminan bahwa suatu lokasi akan sukses.
-- Proyek ini merupakan prototipe analisis menggunakan Python, bukan aplikasi Web GIS interaktif.
-- Untuk pengembangan lebih lanjut, proyek dapat menggunakan data geografis nyata, peta interaktif, database spasial seperti PostGIS, serta framework web.
-
-## Pengembangan Selanjutnya
-
-- Menampilkan kandidat lokasi pada peta interaktif.
-- Mengintegrasikan data geografis nyata.
-- Menambahkan kriteria aksesibilitas dan jaringan jalan.
-- Mengembangkan aplikasi Web GIS.
-- Menggunakan database spasial untuk menyimpan dan menganalisis data.
+Hasil rekomendasi bergantung pada data dan metode yang digunakan dalam notebook. Keakuratan rekomendasi untuk kebutuhan bisnis nyata perlu dievaluasi berdasarkan kualitas data, kriteria analisis, dan kondisi lapangan.
 
 ## Kesimpulan
 
-Studi kasus ini menunjukkan bahwa GIS dan pemrograman Python dapat digunakan untuk membantu analisis lokasi usaha melalui pengolahan data geografis, penghitungan jarak, dan pemeringkatan kandidat lokasi. Proyek ini juga menjadi dasar untuk mempelajari pengembangan sistem rekomendasi berbasis GIS.
+Proyek ini menunjukkan contoh penerapan Python dan GIS untuk analisis kandidat lokasi usaha. Melalui notebook dan hasil analisis CSV, proyek ini menjadi latihan awal dalam memahami pemanfaatan data geografis untuk membantu pengambilan keputusan.
 
-## Lisensi
+## Tujuan Akademik
 
-Proyek ini dibuat untuk tujuan pembelajaran dan pengembangan akademik.
+Proyek ini dibuat untuk keperluan pembelajaran dan studi kasus penerapan GIS dalam konteks industri.
